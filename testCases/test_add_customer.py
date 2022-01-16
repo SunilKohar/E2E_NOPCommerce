@@ -25,15 +25,15 @@ class Test_003_Add_Customer:
         self.lp.set_username(self.username)
         self.lp.set_password(self.password)
         self.lp.click_login()
-        print("*********Login Successfull**********")
-        print("******** start Adding new customer *******")
+        self.logger.info("********* Login Successfull **********")
+        self.logger.info("******** start Adding new customer *******")
 
         self.addcust= AddCustomer(self.driver)
         self.addcust.click_customer_menu()
         self.addcust.click_customer_menu_item()
         self.addcust.click_add_new_button()
 
-        print("******** Provide customer details ***********")
+        self.logger.info("******** Provide customer details ***********")
         self.email = random_generator() + "@getnada.com"
         self.addcust.set_emailid(self.email)
         self.addcust.set_password("passwerr123")
